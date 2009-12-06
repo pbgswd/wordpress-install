@@ -1,6 +1,7 @@
 #!/bin/bash
 # run this script with chmod 755 permissions.
-
+#
+#
 workPath=$(pwd)
 
 rm -rf filerepository repository www *.zip # this line cleans dir for testing, comment out when done
