@@ -1,6 +1,6 @@
 #!/bin/bash
 # run this script with chmod 755 permissions.
-#
+# create version without making local svn repository in the process 
 #
 workPath=$(pwd)
 
