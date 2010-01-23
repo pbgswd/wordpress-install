@@ -1,6 +1,7 @@
 #!/bin/bash
 # run this script with chmod 755 permissions.
 # nosvn branch, see http://github.com/superwebdeveloper/wordpress-install/tree/nosvn
+# create version without making local svn repository in the process 
 #
 workPath=$(pwd)
 
