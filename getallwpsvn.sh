@@ -1,22 +1,26 @@
 #!/bin/bash
 # run this script with chmod 755 permissions.
-#
+# nosvn branch, see http://github.com/superwebdeveloper/wordpress-install/tree/nosvn
 #
 workPath=$(pwd)
 
-rm -rf filerepository repository www *.zip # this line cleans dir for testing, comment out when done
+#set to your web root
+webDir=workPath/html
 
-svnadmin create repository
+#rm -rf filerepository repository www *.zip # this line cleans dir for testing, comment out when done
 
-mkdir -p filerepository/{branches,tags,trunk/{html,db,cron,scripts,themes,plugins,project,selenium}}
+#svnadmin create repository
+
+#mkdir -p filerepository/{branches,tags,trunk/{html,db,cron,scripts,themes,plugins,project,selenium}}
 # got anything to import into those directories under trunk?
 # import into the directories under trunk now
 # before the next step
 svn import filerepository file://$workPath/repository -m "initial import using getallwpsvn.sh script"
 rm -rf filerepository
 svn checkout file://$workPath/repository/trunk www
-cd www
-svn rm html
+cd webDir
+
+#svn rm html
 svn commit -m "rm html temporarily for clean propset"
 svn propset svn:externals 'html http://core.svn.wordpress.org/trunk/' .
 svn up
@@ -57,7 +61,9 @@ THEMESITES[16]=http://wordpress.org/extend/themes/download/hybrid.0.6.1.zip
 THEMESITES[17]=http://wordpress.org/extend/themes/download/new-york.1.0.1.zip
 THEMESITES[18]=http://wordpress.org/extend/themes/download/f8-lite.1.3.zip
 THEMESITES[19]=http://wordpress.org/extend/themes/download/simplex.1.3.1.zip
-THEMESITES[20]=http://wordpress.org/extend/themes/download/cleanr.0.1.2.zip
+THEMESITES[21]=http://wordpress.org/extend/themes/download/cleanr.0.1.2.zip
+THEMESITES[22]=http://wordpress.org/extend/themes/download/arras-theme.1.3.6.zip
+THEMESITES[23]=http://wordpress.org/extend/themes/download/patagonia.1.6.6.zip
 
 for s in ${THEMESITES[@]}
 do wget "$s"
