@@ -1,6 +1,6 @@
 all-in-one-seo-pack http://svn.wp-plugins.org/all-in-one-seo-pack/trunk
 advertising-manager http://svn.wp-plugins.org/advertising-manager/trunk
-cforms http://svn.wp-plugins.org/cforms/trunk
+cforms-ii http://svn.wp-plugins.org/cforms-ii/trunk/
 google-sitemap-generator http://svn.wp-plugins.org/google-sitemap-generator/trunk
 sociable http://svn.wp-plugins.org/sociable/trunk
 stats  http://svn.wp-plugins.org/stats/trunk
@@ -9,3 +9,6 @@ vipers-video-quicktags http://svn.wp-plugins.org/vipers-video-quicktags/trunk
 wordbook http://svn.wp-plugins.org/wordbook/trunk
 wp-flickr http://svn.wp-plugins.org/wp-flickr/trunk
 wp-super-cache http://svn.wp-plugins.org/wp-super-cache/trunk
+multi-level-navigation-plugin http://svn.wp-plugins.org/multi-level-navigation-plugin/trunk/
+xrds-simple http://svn.wp-plugins.org/xrds-simple/trunk/
+openid http://svn.wp-plugins.org/openid/trunk/
