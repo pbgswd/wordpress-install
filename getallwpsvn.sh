@@ -1,47 +1,42 @@
 #!/bin/bash
 # run this script with chmod 755 permissions.
 # nosvn branch, see http://github.com/superwebdeveloper/wordpress-install/tree/nosvn
-# create version without making local svn repository in the process 
+# create version without making local svn repository in the process
 #
 workPath=$(pwd)
-
+ 
 #set to your web root
-webDir=workPath/html
+webDir=$workPath/html
+ 
+cd $webDir
+pwd 
 
-#rm -rf filerepository repository www *.zip # this line cleans dir for testing, comment out when done
+svn export --force 'http://core.svn.wordpress.org/trunk/' . 
 
-#svnadmin create repository
-
-#mkdir -p filerepository/{branches,tags,trunk/{html,db,cron,scripts,themes,plugins,project,selenium}}
-# got anything to import into those directories under trunk?
-# import into the directories under trunk now
-# before the next step
-svn import filerepository file://$workPath/repository -m "initial import using getallwpsvn.sh script"
-rm -rf filerepository
-svn checkout file://$workPath/repository/trunk www
-cd webDir
-
-#svn rm html
-svn commit -m "rm html temporarily for clean propset"
-svn propset svn:externals 'html http://core.svn.wordpress.org/trunk/' .
-svn up
-cd html/wp-content/
+cd wp-content/plugins/
+pwd
 # get plugins from repository http://svn.wp-plugins.org/
-# plugins listed in svn.plugins.externals
-svn propset svn:externals -F ../../../svn.plugins.externals plugins/
-#svn commit "plugins propset" # no commit if no local repository
-svn up
-# themes repository: http://svn.wp-themes.org/
-# themes repository is a bit of a ghost town, none grabbed here
-# browse the site and get the zip
-# themes listed in svn.themes.externals file, if there are any
-svn propset svn:externals -F svn.themes.externals plugins/
-svn up
 
-cd themes
+svn export http://svn.wp-plugins.org/all-in-one-seo-pack/trunk all-in-one-seo-pack
+svn export http://svn.wp-plugins.org/advertising-manager/trunk advertising-manager
+#svn export http://svn.wp-plugins.org/cforms-ii/trunk cforms-ii ## get it manually
+svn export http://svn.wp-plugins.org/google-sitemap-generator/trunk google-sitemap-generator
+svn export http://svn.wp-plugins.org/sociable/trunk sociable
+svn export http://svn.wp-plugins.org/stats/trunk stats 
+svn export http://svn.wp-plugins.org/ultimate-google-analytics/trunk ultimate-google-analytics 
+svn export http://svn.wp-plugins.org/vipers-video-quicktags/trunk vipers-video-quicktags
+svn export http://svn.wp-plugins.org/wordbook/trunk wordbook 
+svn export http://svn.wp-plugins.org/wp-flickr/trunk wp-flickr 
+svn export http://svn.wp-plugins.org/wp-super-cache/trunk wp-super-cache 
+svn export http://svn.wp-plugins.org/multi-level-navigation-plugin/trunk multi-level-navigation-plugin
+svn export http://svn.wp-plugins.org/xrds-simple/trunk xrds-simple
+svn export http://svn.wp-plugins.org/openid/trunk openid
+ 
+cd ../themes
+pwd
 # load up on themes
 #more human readable format for array
-
+ 
 THEMESITES[0]=http://dev.digitalnature.ro/fusion/fusion-wordpress.zip
 THEMESITES[1]=http://ericulous.com/?load=googlechrome.zip
 THEMESITES[2]=http://ericulous.com/?load=internetcenter.zip
@@ -65,26 +60,26 @@ THEMESITES[19]=http://wordpress.org/extend/themes/download/simplex.1.3.1.zip
 THEMESITES[21]=http://wordpress.org/extend/themes/download/cleanr.0.1.2.zip
 THEMESITES[22]=http://wordpress.org/extend/themes/download/arras-theme.1.3.6.zip
 THEMESITES[23]=http://wordpress.org/extend/themes/download/patagonia.1.6.6.zip
-
+ 
 for s in ${THEMESITES[@]}
 do wget "$s"
 done
-
+ 
 FILES="*.zip"
 for f in "$FILES"
 do unzip "$f"
 done
-
+ 
 rm *.zip
 rm *.zip.*
-cd ../../../
-svn commit -m "load in of plugins and themes complete"
 
-cd $workPath
-cp $workPath/www/html/wp-config-sample.php  $workPath/www/html/wp-config.php
-chmod 777 $workPath/www/html/wp-config.php
-chmod 777 $workPath/www/html/wp-content #temporarily, for cache
-mkdir $workPath/www/html/wp-content/uploads && chmod 777 $_
-touch $workPath/www/html/.htaccess && chmod 777 $_
+cd $webDir
+cp $webDir/wp-config-sample.php $webDir/wp-config.php
+chmod 777 $webDir/wp-config.php
+chmod 777 $webDir/wp-content #temporarily, for cache
 
+chmod 777 $webDir/wp-content/uploads || mkdir $webDir/wp-content/uploads && chmod 777 $_
+touch $webDir/.htaccess && chmod 777 $_
+echo "done importing wordpress core, plugins, and themes. Go make your db, manually configure wp-config.php, and perform setup."
+ 
 # do any post processing, other importing now, and commit it if you did.
