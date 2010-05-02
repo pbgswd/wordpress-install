@@ -1,0 +1,3 @@
+this stub of a readme is for the master branch.
+With this script you pull down wordpress core, and commit it to a local repository using svn externals, as well as plugins and themes.
+This master branch hosts the more complete example, and so it may have some features that arent really needed. 
