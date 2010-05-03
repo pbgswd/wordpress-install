@@ -1,0 +1,6 @@
+This is the nosvn branch for get all wp from svn. This branch does not do all that the main branch does. It just pulls down the main wp core, then uses wget to pull down a bunch of themes and so on for the plugins.....
+
+It takes care of most of your wordpress setup, if not all.
+
+Peter Gordon
+htp://superwebdeveloper.com
