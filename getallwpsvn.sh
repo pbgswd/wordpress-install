@@ -86,7 +86,7 @@ cp $webDir/wp-config-sample.php $webDir/wp-config.php
 chmod 777 $webDir/wp-config.php
 chmod 777 $webDir/wp-content #temporarily, for cache
 
-chmod 777 $webDir/wp-content/uploads || mkdir $webDir/wp-content/uploads && chmod 777 $_
+mkdir $webDir/wp-content/uploads && chmod 777 $_
 touch $webDir/.htaccess && chmod 777 $_
 echo "done importing wordpress core, plugins, and themes. Go make your db, manually configure wp-config.php, and perform setup."
  
