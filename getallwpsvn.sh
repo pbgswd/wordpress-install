@@ -2,13 +2,20 @@
 # set this script permissions to 755. 'chmod 755 getallwpsvn.sh'.
 # run from the command line with './getallwpsvn.sh'.
 # nosvn branch, see http://github.com/superwebdeveloper/wordpress-install/tree/nosvn
-# create version without making local svn repository in the process
+# create a wordpress website with themes and plugins without making local svn repository in the process
 #
-workPath=$(pwd)
- 
-#set to your web root
+# Define your work path in one of the following 2 ways. 
+# When this script is in the web root, use workPath=$(pwd)
+# When you are just going to run the script elsewhere, point to the directory above the web root
+# Watch screen output for errors. Wipe, tweak and run again.
+#
+
+#workPath=$(pwd)
+workPath=
+
+#set to your what your web root is, html, public_html, www etc
 webDir=$workPath/html
- 
+
 cd $webDir
 pwd 
 
