@@ -42,9 +42,22 @@ svn export http://svn.wp-plugins.org/wp-super-cache/trunk wp-super-cache
 svn export http://svn.wp-plugins.org/multi-level-navigation-plugin/trunk multi-level-navigation-plugin
 svn export http://svn.wp-plugins.org/xrds-simple/trunk xrds-simple
 svn export http://svn.wp-plugins.org/openid/trunk openid
- 
+
+PLUGINS[0]=http://www.deliciousdays.com/wp-content/themes/dd/c3.php?http://www.deliciousdays.com/download/cforms-v11.7.1.zip
+for s in ${PLUGINS[@]}
+do wget "$s"
+done
+
+FILES="*.zip"
+for f in "$FILES"
+do unzip "$f"
+done
+
+rm *.zip
+rm *.zip.*
+
 # get cforms manually, etc
-# http://www.deliciousdays.com/wp-content/themes/dd/c3.php?http://www.deliciousdays.com/download/cforms-v11.7.1.zip
+# 
 cd ../themes
 pwd
 # load up on themes
