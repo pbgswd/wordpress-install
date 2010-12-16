@@ -27,12 +27,15 @@ pwd
 
 svn export http://svn.wp-plugins.org/all-in-one-seo-pack/trunk all-in-one-seo-pack
 svn export http://svn.wp-plugins.org/advertising-manager/trunk advertising-manager
-#svn export http://svn.wp-plugins.org/cforms-ii/trunk cforms-ii ## get it manually
 svn export http://svn.wp-plugins.org/google-sitemap-generator/trunk google-sitemap-generator
+svn export http://svn.wp-plugins.org/feedburner-plugin/trunk fd-feedburner
+svn export http://svn.wp-plugins.org/feed2tweet/trunk feed2tweet
 svn export http://svn.wp-plugins.org/sociable/trunk sociable
 svn export http://svn.wp-plugins.org/stats/trunk stats 
 svn export http://svn.wp-plugins.org/ultimate-google-analytics/trunk ultimate-google-analytics 
 svn export http://svn.wp-plugins.org/vipers-video-quicktags/trunk vipers-video-quicktags
+svn export http://svn.wp-plugins.org/share-on-facebook/trunk share-on-facebook
+svn export http://svn.wp-plugins.org/twitter-widget-pro/trunk twitter-widget-pro
 svn export http://svn.wp-plugins.org/wordbook/trunk wordbook 
 svn export http://svn.wp-plugins.org/wp-flickr/trunk wp-flickr 
 svn export http://svn.wp-plugins.org/wp-super-cache/trunk wp-super-cache 
@@ -40,6 +43,8 @@ svn export http://svn.wp-plugins.org/multi-level-navigation-plugin/trunk multi-l
 svn export http://svn.wp-plugins.org/xrds-simple/trunk xrds-simple
 svn export http://svn.wp-plugins.org/openid/trunk openid
  
+# get cforms manually, etc
+# http://www.deliciousdays.com/wp-content/themes/dd/c3.php?http://www.deliciousdays.com/download/cforms-v11.7.1.zip
 cd ../themes
 pwd
 # load up on themes
