@@ -42,8 +42,13 @@ svn export http://svn.wp-plugins.org/wp-super-cache/trunk wp-super-cache
 svn export http://svn.wp-plugins.org/multi-level-navigation-plugin/trunk multi-level-navigation-plugin
 svn export http://svn.wp-plugins.org/xrds-simple/trunk xrds-simple
 svn export http://svn.wp-plugins.org/openid/trunk openid
+svn export http://svn.wp-plugins.org/insere-iframe/trunk/ insere-iframe
+svn export http://svn.wp-plugins.org/redirect-by-custom-field/trunk/ redirect-by-custom-field
+svn export http://svn.wp-plugins.org/wp-email/trunk/ wp-email
+svn export http://svn.wp-plugins.org/wp-email-capture/trunk/ wp-email-capture
+svn export http://svn.wp-plugins.org/wp-responder-email-autoresponder-and-newsletter-plugin/trunk/ wp-responder-email-autoresponder-and-newsletter-plugin
 
-PLUGINS[0]=http://www.deliciousdays.com/wp-content/themes/dd/c3.php?http://www.deliciousdays.com/download/cforms-v11.7.1.zip
+PLUGINS[0]=http://www.deliciousdays.com/wp-content/themes/dd/c3.php?http://www.deliciousdays.com/download/cforms-v11.7.2.zip
 for s in ${PLUGINS[@]}
 do wget "$s"
 done
@@ -84,8 +89,13 @@ THEMESITES[17]=http://wordpress.org/extend/themes/download/new-york.1.0.1.zip
 THEMESITES[18]=http://wordpress.org/extend/themes/download/f8-lite.1.3.zip
 THEMESITES[19]=http://wordpress.org/extend/themes/download/simplex.1.3.1.zip
 THEMESITES[21]=http://wordpress.org/extend/themes/download/cleanr.0.1.2.zip
-THEMESITES[22]=http://wordpress.org/extend/themes/download/arras-theme.1.3.6.zip
+THEMESITES[22]=http://wordpress.org/extend/themes/download/arras-theme.1.5.0.1.zip
 THEMESITES[23]=http://wordpress.org/extend/themes/download/patagonia.1.6.6.zip
+THEMESITES[24]=http://wordpress.org/extend/themes/download/graphene.1.1.3.1.zip
+THEMESITES[25]=http://wordpress.org/extend/themes/download/custom-community.1.6.2.zip
+THEMESITES[26]=http://wordpress.org/extend/themes/download/swift.5.54.zip
+
+
  
 for s in ${THEMESITES[@]}
 do wget "$s"
