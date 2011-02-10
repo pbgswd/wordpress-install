@@ -11,7 +11,7 @@
 #
 
 #workPath=$(pwd)
-workPath=
+workPath=/home/pbg/websites/brad
 
 #set to your what your web root is, html, public_html, www etc
 webDir=$workPath/html
@@ -94,8 +94,6 @@ THEMESITES[23]=http://wordpress.org/extend/themes/download/patagonia.1.6.6.zip
 THEMESITES[24]=http://wordpress.org/extend/themes/download/graphene.1.1.3.1.zip
 THEMESITES[25]=http://wordpress.org/extend/themes/download/custom-community.1.6.2.zip
 THEMESITES[26]=http://wordpress.org/extend/themes/download/swift.5.54.zip
-
-
  
 for s in ${THEMESITES[@]}
 do wget "$s"
@@ -116,6 +114,11 @@ chmod 777 $webDir/wp-content #temporarily, for cache
 
 mkdir $webDir/wp-content/uploads && chmod 777 $_
 touch $webDir/.htaccess && chmod 777 $_
+
+touch $webDir/sitemap.xml && chmod 777 $_
+touch $webDir/sitemap.tar.gz && chmod 777 $_
+
+
 echo "done importing wordpress core, plugins, and themes. Go make your db, manually configure wp-config.php, and perform setup."
  
 # do any post processing, other importing now, and commit it if you did.
