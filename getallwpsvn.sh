@@ -8,6 +8,7 @@
 # When this script is in the web root, use workPath=$(pwd)
 # When you are just going to run the script elsewhere, point to the directory above the web root
 # Watch screen output for errors. Wipe, tweak and run again.
+#  git clone -b  nosvn https://github.com/superwebdeveloper/wordpress-install.git
 #
 
 #workPath=$(pwd)
